@@ -11,9 +11,7 @@
  */
 int printf_char(va_list v)
 {
-	_putchar(va_arg(v, int));
-
-	return (1);
+	return (_putchar(va_arg(v, int)));
 }
 
 /**
