@@ -32,6 +32,11 @@ int _printf(const char * const format, ...)
 				totalchars += _putchar('%');
 				i += 2;
 				break;
+			case 'd':
+			case 'i':
+				totalchars += printf_integer(ap);
+				i += 2;
+				break;
 			default:
 				break;
 			}
