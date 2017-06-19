@@ -1,5 +1,3 @@
-#ifndef PRINTF_1
-#define PRINTF_1
 #include <stdarg.h>
 #include "holberton.h"
 /**
@@ -46,4 +44,3 @@ int printf_integer(va_list v)
 	digits[index] = '\0';
 	return (0);
 }
-#endif
