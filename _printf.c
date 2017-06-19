@@ -40,8 +40,7 @@ int _printf(const char * const format, ...)
 				break;
 			}
 		default:
-			_putchar(format[i]);
-			totalchars++;
+			totalchars += _putchar(format[i]);
 			break;
 		}
 		i++;
