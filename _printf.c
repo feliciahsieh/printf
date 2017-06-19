@@ -27,7 +27,6 @@ int _printf(const char * const format, ...)
 			case 's':
 				totalchars += printf_string(ap);
 				i += 2;
-				totalchar++;
 				break;
 			case '%':
 				totalchars += _putchar('%');
