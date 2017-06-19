@@ -37,7 +37,7 @@ int _printf(const char * const format, ...)
 				printf_integer(ap);
 				break;
 			case 'b':
-				i += 2;
+				i += 1;
 				break;
 			default:
 				break;
