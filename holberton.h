@@ -16,6 +16,8 @@ int _putchar(char c);
 int printf_char(va_list v);
 int printf_string(va_list v);
 
+int printf_integer(va_list v);
+
 int _printf(const char *format, ...);
 
 #endif /* PRINT_F */
