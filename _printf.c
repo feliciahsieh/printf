@@ -21,18 +21,15 @@ int _printf(const char * const format, ...)
 			switch (format[i + 1])
 			{
 			case 'c':
-				printf_char(ap);
-				totalchars++;
+				totalchars += printf_char(ap);
 				i += 2;
 				break;
 			case 's':
-				printf_string(ap);
-				totalchars++;
+				totalchars += printf_string(ap);
 				i += 2;
 				break;
 			case '%':
-				_putchar('%');
-				totalchars++;
+				totalchars += _putchar('%');
 				i += 2;
 				break;
 			case 'd':
