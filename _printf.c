@@ -13,8 +13,7 @@
  */
 int printf_char(va_list v)
 {
-	/*might need to typecast value to CHAR*/
-        _putchar(va_arg(v, int));
+	_putchar(va_arg(v, int));
 
 	return (1);
 }
@@ -26,19 +25,19 @@ int printf_char(va_list v)
  */
 int printf_string(va_list v)
 {
-        char *str = NULL;
+	char *str = NULL;
 	unsigned int i = 0;
 
-        str = va_arg(v, char *);
-        if (str == NULL)
+	str = va_arg(v, char *);
+	if (str == NULL)
 	{
-                _putchar('(');
+		_putchar('(');
 		_putchar('n');
 		_putchar('u');
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
-		/* Add 1 character or more? */
+/* Add 1 character or more? return value? */
 	}
 	while (str[i])
 		_putchar(str[i++]);
@@ -56,7 +55,8 @@ int _printf(const char * const format, ...)
 {
 	unsigned int totalchars = 0;
 
-/*	_Printf_t p[4] = {
+/*
+	_Printf_t p[4] = {
 		{'c', printf_char},
 		{'s', printf_string},
 		{'%', printf_percent},
@@ -73,25 +73,25 @@ int _printf(const char * const format, ...)
 		switch (format[i])
 		{
 		case '%':
-			if (format[i+1] == 'c')
+			if (format[i + 1] == 'c')
 			{
 				printf_char(ap);
 				totalchars++;
 				i++;
 			}
-			else if (format[i+1] == 's')
+			else if (format[i + 1] == 's')
 			{
 				printf_string(ap);
 				totalchars++;
 				i++;
 			}
-			else if (format[i+1] == '%')
+			else if (format[i + 1] == '%')
 			{
 				_putchar('%');
 				totalchars++;
 				i++;
 			}
-			else if ((format[i+1] == 'd') || (format[i+1] == 'i'))
+			else if ((format[i + 1] == 'd') || (format[i + 1] == 'i'))
 			{
 /*
 				num = va_arg(ap, int);
@@ -105,7 +105,8 @@ int _printf(const char * const format, ...)
 				}
 				for (t = 0; t <= 9; t++)
 				{
-					_putchar('F'); floating pt error in next line
+					_putchar('F');
+					floating pt error
 					d = (num / divisor) % 10;
 					_putchar('H');
 					if (num < 0)
