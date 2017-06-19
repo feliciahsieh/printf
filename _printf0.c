@@ -35,7 +35,7 @@ int printf_string(va_list v)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
-/* Add 1 character or more? return value? */
+		return (6);
 	}
 	while (str[i])
 		_putchar(str[i++]);
