@@ -93,8 +93,9 @@ int _printf(const char * const format, ...)
 			}
 			else if ((format[i+1] == 'd') || (format[i+1] == 'i'))
 			{
+/*
 				num = va_arg(ap, int);
-				/*can't get pow(10,9) working */
+				can't get pow(10,9) working
 				for (t = 0; t < 9; t++)
 					divisor = divisor * 10;
 				if (num < 0)
@@ -104,7 +105,7 @@ int _printf(const char * const format, ...)
 				}
 				for (t = 0; t <= 9; t++)
 				{
-					_putchar('F'); /* floating pt error in next line */
+					_putchar('F'); floating pt error in next line
 					d = (num / divisor) % 10;
 					_putchar('H');
 					if (num < 0)
@@ -113,7 +114,8 @@ int _printf(const char * const format, ...)
 					_putchar(d);
 					divisor = divisor / 10;
 				}
-				/* need to add totalchars */
+				need to add totalchars
+*/
 			}
 			break;
 		default:
