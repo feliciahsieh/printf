@@ -7,7 +7,7 @@
  */
 int printf_integer(va_list v)
 {
-	int divisor = 1, t, d, num, index = 0, highestorderdigit, totalchars = 0;
+	int divisor = 1, t, d, num, index = 0, highestorderdigit = 0, totalchars = 0;
 	char digits[12] = { 0 };
 
 	digits[0] = digits[0];
@@ -40,7 +40,6 @@ int printf_integer(va_list v)
 		_putchar(d + '0');
 		totalchars++;
 	}
-	_putchar('\n');
 	digits[index] = '\0';
 	return (0);
 }
