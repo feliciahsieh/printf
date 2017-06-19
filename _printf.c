@@ -23,27 +23,29 @@ int _printf(const char * const format, ...)
 			case 'c':
 				printf_char(ap);
 				totalchars++;
-				i++;
+				i += 2;
 				break;
 			case 's':
 				printf_string(ap);
 				totalchars++;
-				i++;
+				i += 2;
 				break;
 			case '%':
 				_putchar('%');
 				totalchars++;
-				i++;
+				i += 2;
 				break;
 			case 'd':
 			case 'i':
 				printf_integer(ap);
 				break;
 			default:
-				_putchar(format[i]);
-				totalchars++;
 				break;
 			}
+		default:
+			_putchar(format[i]);
+			totalchars++;
+			break;
 		}
 		i++;
 	}
