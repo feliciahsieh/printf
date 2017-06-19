@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include <ctype.h>
 #include <stdarg.h>
 #include "holberton.h"
@@ -28,35 +29,21 @@ int printf_string(va_list v)
         char *str = NULL;
 	unsigned int i = 0;
 
-	str = "";
-	str++;
-
         str = va_arg(v, char *);
         if (str == NULL)
-                return (0);
-
+	{
+                _putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		/* Add 1 character or more? */
+	}
 	while (str[i])
 		_putchar(str[i++]);
 
-	return (1);
-}
-
-/**
- * printf_percent - prints data of type %
- * @v: variatic list
- * Return: total characters printed
- */
-int printf_percent(va_list v)
-{
-	char *str = NULL, *str2 = NULL;
-
-	str = str2;
-	str2 = str;
-
-	str = va_arg(v, char *);
-        _putchar('%');
-
-	return (1);
+	return (i);
 }
 
 /**
@@ -77,14 +64,12 @@ int _printf(const char * const format, ...)
 	};
 */
 	unsigned int i = 0;
-/*	unsigned int j = 0;*/
+	int num = 0, d, t = 1, divisor;
 	va_list ap;
 
 	va_start(ap, format);
 	while (format && format[i])
 	{
-		/*j = 0;*/
-
 		switch (format[i])
 		{
 		case '%':
@@ -106,38 +91,41 @@ int _printf(const char * const format, ...)
 				totalchars++;
 				i++;
 			}
+			else if ((format[i+1] == 'd') || (format[i+1] == 'i'))
+			{
+				num = va_arg(ap, int);
+				/*can't get pow(10,9) working */
+				for (t = 0; t < 9; t++)
+					divisor = divisor * 10;
+				if (num < 0)
+				{
+					_putchar('-');
+					totalchars++;
+				}
+				for (t = 0; t <= 9; t++)
+				{
+					_putchar('F'); /* floating pt error in next line */
+					d = (num / divisor) % 10;
+					_putchar('H');
+					if (num < 0)
+						d = -d;
+					_putchar('I');
+					_putchar(d);
+					divisor = divisor / 10;
+				}
+				/* need to add totalchars */
+			}
 			break;
-			/*		case 92:
-			_putchar('J');
-			break;*/
 		default:
 			_putchar(format[i]);
 			totalchars++;
 			break;
 		}
 
-/*		while (p[j].printType)
-		{
-			if (format[i] == p[j].printType)
-			{
-				totalchars += p[j].f(ap);
-				break;
-			} else
-			{
-				_putchar(va_arg(ap, int));
-				totalchars++;
-			}
-
-			j++;
-		}
-
-*/
 		i++;
 	}
 
 	va_end(ap);
 
-	/* Must return total chars printed */
-	printf("TOTAL:%d\n",totalchars);
 	return (totalchars);
 }
