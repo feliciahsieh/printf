@@ -10,5 +10,5 @@
 int printf_octal(va_list v)
 {
 	(void) v;
-	return(0);
+	return (0);
 }
