@@ -1,11 +1,18 @@
-#ifndef PRINTF_0
-#define PRINTF_0
 #include <stdarg.h>
 #include <stddef.h>
 #include "holberton.h"
 
 /**
- * print_char - prints data of type character
+ * printf_percent - prints percent-percent printf type
+ * Return: total characters printed
+ */
+int printf_percent(void)
+{
+	return (_putchar('%'));
+}
+
+/**
+ * printf_char - prints data of type character
  * @v: variatic list
  * Return: total characters printed
  */
@@ -40,5 +47,3 @@ int printf_string(va_list v)
 
 	return (i);
 }
-
-#endif

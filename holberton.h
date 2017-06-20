@@ -1,23 +1,26 @@
-#ifndef PRINT_F
-#define PRINT_F
+#ifndef _PRINT_F
+#define _PRINT_F
 /**
- * struct _Printf - struct for matching data type with print function
- * @printType: char to determine type to print
+ * struct _printf_ - struct for matching data type with print function
+ * @prType: char to determine type to print
  * @f: associated function
  */
-typedef struct _Printf
+typedef struct _printf_
 {
-	char printType;
+	char prType;
 	int (*f)();
-} _Printf_t;
+} _printf_t;
 
 int _putchar(char c);
 
+int printf_percent(void);
 int printf_char(va_list v);
 int printf_string(va_list v);
 
 int printf_integer(va_list v);
 
+int printf_process(va_list v, const char * const format, char nextchar);
+
 int _printf(const char *format, ...);
 
-#endif /* PRINT_F */
+#endif

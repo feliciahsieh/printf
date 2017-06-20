@@ -9,43 +9,25 @@
  */
 int _printf(const char * const format, ...)
 {
-	unsigned int totalchars = 0, i = 0;
+	unsigned int totalchars = 0, i = 0, prev_total = 0;
 	va_list ap;
 
 	va_start(ap, format);
+
 	while (format && format[i])
 	{
-		switch (format[i])
+		if (format[i] == '%')
 		{
-		case '%':
-			switch (format[i + 1])
-			{
-			case 'c':
-				totalchars += printf_char(ap);
-				i += 2;
-				break;
-			case 's':
-				totalchars += printf_string(ap);
-				i += 2;
-				break;
-			case '%':
-				totalchars += _putchar('%');
-				i += 2;
-				break;
-			case 'd':
-			case 'i':
-				totalchars += printf_integer(ap);
-				i += 2;
-				break;
-			default:
-				break;
-			}
-		default:
+			totalchars += printf_process(ap, format, format[i + 1]);
+		}
+		else
+		{
 			totalchars += _putchar(format[i]);
-			break;
 		}
 		i++;
 	}
+
 	va_end(ap);
+
 	return (totalchars);
 }
