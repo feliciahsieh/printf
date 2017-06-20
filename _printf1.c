@@ -17,7 +17,7 @@ int printf_integer(va_list v)
 	{
 		digits[index++] = '-';
 		_putchar('-');
-		total++;
+		totalchars++;
 	}
 	for (t = 0; t <= 9; t++)
 	{
