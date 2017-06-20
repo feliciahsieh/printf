@@ -1,4 +1,4 @@
-#include <stdarg>
+#include <stdarg.h>
 #include <stddef.h>
 #include "holberton.h"
 
@@ -9,4 +9,6 @@
  */
 int printf_octal(va_list v)
 {
+	(void) v;
+	return(0);
 }
