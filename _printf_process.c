@@ -22,6 +22,7 @@ int pr_process(va_list v, char nextchar, char nextnextchar)
                 {'R', printf_rot13},
                 {'b', printf_binary},
                 {'o', printf_octal},
+		{'u', printf_uint},
                 {'\0', NULL}
         };
 
