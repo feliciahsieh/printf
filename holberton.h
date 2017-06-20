@@ -19,7 +19,7 @@ int printf_string(va_list v);
 
 int printf_integer(va_list v);
 
-int printf_process(va_list v, const char * const format, char nextchar);
+int printf_process(va_list v, char nextchar);
 
 int _printf(const char *format, ...);
 

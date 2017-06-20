@@ -9,7 +9,7 @@
  * @i: current index of format
  * Return: total characters printed
  */
-int printf_process(va_list v, const char * const format, char nextchar)
+int printf_process(va_list v, char nextchar)
 {
 	_printf_t p[NUM_CS] = {
 		{'c', printf_char},
