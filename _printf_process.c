@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include "holberton.h"
-#define NUM_CS 6
+#define NUM_CS 7
 /**
  * pr_process - process the printf variants
  * @v: variatic list
@@ -19,6 +19,7 @@ int pr_process(va_list v, char nextchar, char nextnextchar)
 		{'%', printf_percent},
 		{'d', printf_integer},
 		{'i', printf_integer},
+		{'o', printf_octal},
 		{'\0', NULL}
 	};
 	int total = 0, j = 0;
