@@ -1,5 +1,6 @@
 #ifndef _PRINT_F
 #define _PRINT_F
+#include <stdarg.h>
 /**
  * struct _printf_ - struct for matching data type with print function
  * @prType: char to determine type to print

@@ -11,22 +11,21 @@
  */
 int pr_process(va_list v, char nextchar, char nextnextchar)
 {
-	(void) nextnextchar;
-
-	_printf_t p[NUM_CS] = {
-		{'c', printf_char},
-		{'s', printf_string},
-		{'%', printf_percent},
-		{'d', printf_integer},
-		{'i', printf_integer},
-		{'r', printf_reverse},
-		{'R', printf_rot13},
-		{'b', printf_binary},
-		{'o', printf_octal},
-		{'\0', NULL}
-	};
 	int total = 0, j = 0;
+	_printf_t p[] = {
+                {'c', printf_char},
+                {'s', printf_string},
+                {'%', printf_percent},
+                {'d', printf_integer},
+                {'i', printf_integer},
+                {'r', printf_reverse},
+                {'R', printf_rot13},
+                {'b', printf_binary},
+                {'o', printf_octal},
+                {'\0', NULL}
+        };
 
+	nextnextchar = nextnextchar;
 	while (p[j].prType)
 	{
 		if (nextchar == p[j].prType)
