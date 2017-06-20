@@ -19,11 +19,13 @@ int printf_string(va_list v);
 
 int printf_integer(va_list v);
 
+int printf_binary(va_list v);
+int printf_rot13(va_list v);
+int printf_reverse(va_list v);
+
 int printf_octal(va_list v);
 
 int pr_process(va_list v, char nextchar, char nextnextchar);
-
-int printf_octal(va_list v);
 
 int _printf(const char *format, ...);
 
