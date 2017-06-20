@@ -41,5 +41,5 @@ int printf_integer(va_list v)
 		totalchars++;
 	}
 	digits[index] = '\0';
-	return (totalchars);
+	return (0);
 }
