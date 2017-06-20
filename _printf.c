@@ -19,7 +19,7 @@ int _printf(const char * const format, ...)
 		if (format[i] == '%')
 		{
 			prev_total = totalchars;
-			totalchars += printf_process(ap, format[i + 1]);
+			totalchars += pr_process(ap, format[i + 1], format[i + 2]);
 			if (totalchars > prev_total)
 			{
 				i++;

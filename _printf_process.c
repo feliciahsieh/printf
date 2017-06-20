@@ -3,14 +3,16 @@
 #include "holberton.h"
 #define NUM_CS 6
 /**
- * printf_process - process the printf variants
+ * pr_process - process the printf variants
  * @v: variatic list
- * @format: printf format line
- * @i: current index of format
+ * @nextchar: char of next line
+ * @nextnextchar: current index of format
  * Return: total characters printed
  */
-int printf_process(va_list v, char nextchar)
+int pr_process(va_list v, char nextchar, char nextnextchar)
 {
+	(void) nextnextchar;
+
 	_printf_t p[NUM_CS] = {
 		{'c', printf_char},
 		{'s', printf_string},
