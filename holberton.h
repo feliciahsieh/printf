@@ -18,9 +18,9 @@ int printf_char(va_list v);
 int printf_string(va_list v);
 
 int printf_integer(va_list v);
-
+int printf_octal(va_list v);
 int printf_process(va_list v, char nextchar);
 
 int _printf(const char *format, ...);
 
-#endif
+#endif /* _PRINT_F */
