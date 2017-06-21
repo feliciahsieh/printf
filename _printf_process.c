@@ -23,6 +23,7 @@ int pr_process(va_list v, char nextchar)
 		{'X', printf_hexUpper},
                 {'o', printf_octal},
 		{'u', printf_uint},
+		{'S', printf_S},
                 {'\0', NULL}
         };
 
