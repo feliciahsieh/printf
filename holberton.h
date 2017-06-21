@@ -23,6 +23,7 @@ int printf_uint(va_list v);
 
 int printf_binary(va_list v);
 int printf_hex(va_list v);
+int printf_hexUpper(va_list v);
 
 int printf_rot13(va_list v);
 int printf_reverse(va_list v);
