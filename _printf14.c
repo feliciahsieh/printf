@@ -9,8 +9,10 @@
 int printf_reverse(va_list v)
 {
 	char *str;
-	int total = 0, i = 0;
+	int total;
+	int i;
 
+	total = 0;
 	str = va_arg(v, char *);
 
 	if (str)
