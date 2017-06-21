@@ -9,7 +9,7 @@
 int printf_reverse(va_list v)
 {
 	char *str;
-	unsigned int total = 0, i = 0;
+	int total = 0, i = 0;
 
 	str = va_arg(v, char *);
 
