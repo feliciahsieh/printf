@@ -20,10 +20,25 @@ int printf_S(va_list v)
 	{
 		if (((s[i] >= 0) && (s[i] < 32)) || (s[i] >= 127))
 		{
-			_putchar('\\');
-			_putchar('x');
-			_putchar(s[i]);
-			total += 3;
+			total += _putchar('\\');
+			total += _putchar('x');
+			if (s[i] < 16)
+			{
+				total += _putchar('0');
+				total += _putchar(hex[s[i]]);
+			}
+			else if (s[i] < 32)
+			{
+				total += _putchar('1');
+				total += _putchar(hex[s[i] - 16]);
+			} else if (s[i] == 127)
+			{
+				total += _putchar('7');
+				total += _putchar('F');
+			} else
+			{
+				total += _putchar(s[i]);
+			}
 		}
 		else
 		{
