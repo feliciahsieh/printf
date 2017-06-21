@@ -9,7 +9,7 @@
 int printf_reverse(va_list v)
 {
 	char *str;
-	unsigned int total = 0, i = 0, j = 0;
+	unsigned int total = 0, i = 0;
 
 	str = va_arg(v, char *);
 
@@ -18,9 +18,10 @@ int printf_reverse(va_list v)
 		for (i = 0; str[i]; i++)
 			;
 
-		for (j = 0; j < i; j++)
+		i--;
+		while (i >= 0)
 		{
-			_putchar(str[i - j - 1]);
+			_putchar(str[i--]);
 			total++;
 		}
 	}
