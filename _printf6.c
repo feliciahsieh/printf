@@ -11,7 +11,7 @@ int printf_S(va_list v)
 {
 	char *s;
 	char hex[17] = "0123456789ABCDEF";
-	int total = 0, i = 0;
+	int total = 0, i = 0, c = 0;
 
 	(void)hex;
 	s = va_arg(v, char *);
@@ -25,12 +25,14 @@ int printf_S(va_list v)
 			if (s[i] < 16)
 			{
 				total += _putchar('0');
-				total += _putchar(hex[s[i]]);
+				c = s[i] - '0';
+				total += _putchar(hex[c]);
 			}
+/*
 			else if (s[i] < 32)
 			{
 				total += _putchar('1');
-				total += _putchar(hex[s[i] - 16]);
+				total += _putchar(hex[s[i] - '0' - 16]);
 			} else if (s[i] == 127)
 			{
 				total += _putchar('7');
@@ -39,6 +41,7 @@ int printf_S(va_list v)
 			{
 				total += _putchar(s[i]);
 			}
+*/
 		}
 		else
 		{
