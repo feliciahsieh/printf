@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include "holberton.h"
-#define R13 55
+#define R13 53
 /**
  * printf_rot13 - prints rot13 of the data
  * @v: variatic list
@@ -17,17 +17,11 @@ int printf_rot13(va_list v)
 	str = va_arg(v, char *);
 	while (str && str[i])
 	{
-		while (j < (R13 + 1))
+		while (j < R13)
 		{
 			if (str[i] == in[j])
 			{
 				_putchar(out[j]);
-				total++;
-				break;
-			}
-			else if (str[i] == '\n')
-			{
-				_putchar('\n');
 				total++;
 				break;
 			}
