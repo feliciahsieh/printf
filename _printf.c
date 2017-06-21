@@ -9,7 +9,7 @@
  */
 int _printf(const char * const format, ...)
 {
-	unsigned int totalchars = 0, i = 0, prev_total = 0;
+	unsigned int total = 0, i = 0, prev_total = 0;
 	va_list ap;
 
 	va_start(ap, format);
@@ -18,9 +18,12 @@ int _printf(const char * const format, ...)
 	{
 		if (format[i] == '%')
 		{
-			prev_total = totalchars;
-			totalchars += pr_process(ap, format[i + 1], format[i + 2]);
-			if (totalchars > prev_total)
+			prev_total = total;
+			if ((format[i + 1] == ' ') && (format[i + 2] == 's'))
+				i += 1; /* erase space char. for "% s" */
+
+			total += pr_process(ap, format[i + 1], format[i + 2]);
+			if (total > prev_total)
 			{
 				i++;
 				prev_total = 0;
@@ -28,12 +31,12 @@ int _printf(const char * const format, ...)
 		}
 		else
 		{
-			totalchars += _putchar(format[i]);
+			total += _putchar(format[i]);
 		}
 		i++;
 	}
 
 	va_end(ap);
 
-	return (totalchars);
+	return (total);
 }

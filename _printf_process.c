@@ -1,9 +1,8 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include "holberton.h"
-#define NUM_CS 10
 /**
- * pr_process - process the printf variants
+ * pr_process - process the printf variants of the characters after %
  * @v: variatic list
  * @nextchar: char of next line
  * @nextnextchar: current index of format
@@ -36,7 +35,7 @@ int pr_process(va_list v, char nextchar, char nextnextchar)
 		}
 		j++;
 	}
-	if (j == NUM_CS)
+	if (j == 11)
 	{
 		total += _putchar('%');
 		total += _putchar(nextchar);
