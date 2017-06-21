@@ -22,7 +22,7 @@ int _printf(const char * const format, ...)
 			if ((format[i + 1] == ' ') && (format[i + 2] == 's'))
 				i += 1; /* erase space char. for "% s" */
 
-			total += pr_process(ap, format[i + 1], format[i + 2]);
+			total += pr_process(ap, format[i + 1]);
 			if (total > prev_total)
 			{
 				i++;

@@ -5,10 +5,9 @@
  * pr_process - process the printf variants of the characters after %
  * @v: variatic list
  * @nextchar: char of next line
- * @nextnextchar: current index of format
  * Return: total characters printed
  */
-int pr_process(va_list v, char nextchar, char nextnextchar)
+int pr_process(va_list v, char nextchar)
 {
 	int total = 0, j = 0;
 	_printf_t p[] = {
@@ -25,7 +24,6 @@ int pr_process(va_list v, char nextchar, char nextnextchar)
                 {'\0', NULL}
         };
 
-	nextnextchar = nextnextchar;
 	while (p[j].prType)
 	{
 		if (nextchar == p[j].prType)

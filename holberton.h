@@ -27,7 +27,7 @@ int printf_reverse(va_list v);
 
 int printf_octal(va_list v);
 
-int pr_process(va_list v, char nextchar, char nextnextchar);
+int pr_process(va_list v, char nextchar);
 
 int _printf(const char *format, ...);
 
