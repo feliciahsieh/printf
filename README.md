@@ -17,7 +17,7 @@ Description: At Holberton School we have the opportunity of creating our own pri
 
 Table of Contents: None
 
-Installation: Git clone the repository at https://github.com/JohnCottrell/printf.git
+Installation: Git clone the repository at https://github.com/feliciahsieh/printf.git
 
 Usage: In your C file, you may #include "holberton.h" and include the *.c files in your gcc (C90) compilation. This code was compiled in a shell script with the following flags:
 
@@ -26,7 +26,7 @@ Usage: In your C file, you may #include "holberton.h" and include the *.c files 
 
 Contributing: Please contact the authors for getting collaboration access to the GIthub repository.
 
-Credits: Felicia Hsieh and John Cottrell at Holberton School. The project is titled, "0x010. C - printf project" and was created between June 16, 2017 to \
-June 21, 2017. You may contact holbertonschool.com if you have questions.
+Credits: Felicia Hsieh - The project, "0x010. C - printf project", was created between June 16, 2017 to \
+June 21, 2017.
 
 License: GNU public license
